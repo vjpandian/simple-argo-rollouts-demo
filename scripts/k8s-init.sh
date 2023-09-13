@@ -22,4 +22,4 @@ echo "Run a simple eksctl command"
 eksctl get clusters
 
 echo "Write kubeconfig to cluster"
-eksctl utils write-kubeconfig --cluster=$K8S_CLUSTER
+#eksctl utils write-kubeconfig --cluster=$K8S_CLUSTER
