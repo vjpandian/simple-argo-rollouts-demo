@@ -2,6 +2,8 @@
 
 A simplified version of the official argo rollouts [demo](https://github.com/argoproj/rollouts-demo).
 
+![Rollouts UI](https://github.com/vjpandian/simple-argo-rollouts-demo/blob/6b456929d328f9a5356e862099c5c0707739f6e3/Rollouts-Demo.gif)
+
 ### Prerequisites:
 
 - Install `argo-rollouts` from the docs [page](https://argo-rollouts.readthedocs.io/en/stable/installation/)
