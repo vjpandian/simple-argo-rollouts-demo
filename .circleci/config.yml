@@ -1,12 +1,22 @@
 
 version: 2.1
 
+orbs:
+  aws-cli: circleci/aws-cli@3.1.5
+
 jobs:
   argo-rollout-deploy:
     machine:
       image: ubuntu-2204:2023.07.2
+    resource_class: medium
     steps:
       - checkout
+      - aws-cli/setup:
+          role-arn: CCI_OIDC_ROLE
+          aws-region: AWS_DEFAULT_REGION
+          profile-name: "vijay-cci-oidc"
+          role-session-name: "argo-rollouts-deploy"
+          session-duration: "1800"
       - run:
           name: Initialize K8s
           command: sh scripts/k8s-init.sh
