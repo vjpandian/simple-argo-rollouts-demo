@@ -34,6 +34,13 @@ kubectl argo rollouts -n argo-rollouts get rollout rollouts-demo --watch
 kubectl port-forward service/rollout-bluegreen-active 8080:80 -n argo-rollouts
 ```
 
+### Updating a rollout
+
+```
+  kubectl argo rollouts -n argo-rollouts set image rollouts-demo \
+  rollouts-demo=argoproj/rollouts-demo:yellow
+```
+
 ### Expose the preview service to a different port
 
 ```
