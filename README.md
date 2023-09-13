@@ -36,6 +36,8 @@ kubectl argo rollouts -n argo-rollouts get rollout rollouts-demo --watch
 kubectl port-forward service/rollout-bluegreen-active 8080:80 -n argo-rollouts
 ```
 
+You can now view the currently deployed version at http://localhost:8080
+
 ### Updating a rollout
 
 ```
@@ -43,11 +45,15 @@ kubectl port-forward service/rollout-bluegreen-active 8080:80 -n argo-rollouts
   rollouts-demo=argoproj/rollouts-demo:yellow
 ```
 
+This will set the image tag to be deployed in case you choose to promote to a newer version `yellow`
+
 ### Expose the preview service to a different port
 
 ```
 kubectl port-forward service/rollout-bluegreen-preview 8081:80 -n argo-rollouts
 ```
+
+You can now view the currently deployed version at http://localhost:8081 and confirm that this is a version that you'd like to rollout to prod or not.
 
 ### Promoting a rollout
 
